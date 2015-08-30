@@ -12,9 +12,9 @@
 
   chrome.browserAction.onClicked.addListener(function (tab) {
     chrome.browserAction.getBadgeText({}, function(text){
-      off = text == "OFF";
+      off = text == "off";
       chrome.browserAction.setBadgeText({
-        text: off ? '' : 'OFF'
+        text: off ? '' : 'off'
       });
       off = !off;
       loadJS();
@@ -24,7 +24,7 @@
   chrome.tabs.onUpdated.addListener(function(tab, response) {
     if (response.status === 'complete') {
       chrome.browserAction.getBadgeText({},function(text){
-        off = text == "OFF";
+        off = text == "off";
         loadJS();
       });
     }
