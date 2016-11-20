@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "version": "0.1",
+  "version": "0.2.3",
   "name": "True Logo",
 
   "description": "Swap out the 'false' Florida State logo for the real deal. Built with love for the fans.",
@@ -25,17 +25,14 @@
 
   "author": "Christopher Schmitt <schmitt@christopher.org>",
 
-  //https://developer.chrome.com/extensions/background_pages
   "background": {
     "scripts": [
-      "jquery-1.11.3.min.js",
       "background.js",
       "on.js",
       "off.js"
     ]
   },
 
-  //https://developer.chrome.com/extensions/match_patterns
  "permissions": [
         "tabs",
         "notifications",

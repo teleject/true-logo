@@ -9,16 +9,16 @@ return new Za.prototype.init(a,b,c,d,e)}m.Tween=Za,Za.prototype={constructor:Za,
 
     "use strict";
 
-    // var FSUImg = chrome.extension.getURL('/images/FSU_Seminoles.svg');
-
-
     var self = {
+
         nFSUImgs: [
-          'https://upload.wikimedia.org/wikipedia/en/c/c6/FSU_Seminoles.svg'
-          //'https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/FSU_Seminoles.svg/180px-FSU_Seminoles.svg.png'
+         chrome.extension.getURL('images/FSU_Seminoles.svg')
+         // 'https://upload.wikimedia.org/wikipedia/en/c/c6/FSU_Seminoles.svg'
         ],
         handleImages: function (lstImgs, time) {
-            $.each($('img[src*="/i/teamlogos/ncaa/500/52.png"], img[src="http://image.cdnllnwnl.xosnetwork.com/fls/32900/site_graphics/logo.png"], img[src="http://image.cdnllnwnl.xosnetwork.com/fls/32900/site_graphics/footerlogo.png"], img[src="https://s.yimg.com/xe/ipt/florida_state_seminoles-2014.png"], img[src="http://sports.cbsimg.net/images/collegefootball/logos/100x100/FSU.png"], img[src="http://sports.cbsimg.net/images/collegefootball/logos/70x70/FSU.png"], img[src="http://sports.cbsimg.net/images/collegefootball/logos/50x50/FSU.png"], img[src="https://pbs.twimg.com/profile_images/574646261216714753/XhVVhy-F_400x400.png"], img[src="https://pbs.twimg.com/profile_images/574646261216714753/XhVVhy-F_bigger.png"], img[src="https://pbs.twimg.com/profile_images/574646261216714753/XhVVhy-F_normal.png"]'), function (i, item) {
+        	// Sites that don't display the Seminole head logo: Tomonhawknation, warchat, etc. 
+        	// Bleacher Report, Instragram, Facebook, YouTube, Twitter, Seminoles, ESPN
+            $.each($('img[src="https://pbs.twimg.com/profile_images/641344872587227136/ZoL5Vgon_bigger.jpg"],img[src="https://pbs.twimg.com/profile_images/641344872587227136/ZoL5Vgon_400x400.jpg"],img[src="https://pbs.twimg.com/profile_images/641341947701886977/i_uUwOd__bigger.jpg"],img[src="https://pbs.twimg.com/profile_images/641341947701886977/i_uUwOd__400x400.jpg"],img[src*="/t1.0-1/p100x100/10304772_745680325469674_8174104548390667111_n.png"],img[src*="/t1.0-1/10304772_745680325469674_8174104548390667111_n.png"],img[src*="http://image.cdnllnwnl.xosnetwork.com/fls/32900/site_graphics/header_logo.png"],img[src*="https://pbs.twimg.com/profile_images/733080065110618112/GNaj98SD.jpg"],img[src*="https://pbs.twimg.com/profile_images/770230699337064448/jj2SxENT.jpg"],img[src*="//cdn.bleacherreport.net/images/team_logos/150x150/florida_state.png"],img[src*="//cdn.bleacherreport.net/images/team_logos/50x50/florida_state.png"],img[src*="//cdn.bleacherreport.net/images/team_logos/24x24/florida_state.png"],img[src*="//igcdn-photos-a-a.akamaihd.net/hphotos-ak-xpa1/t51.2885-19/10864790_1583017165251568_222606013_a.jpg"],img[src*="//scontent-dfw1-1.xx.fbcdn.net/hprofile-xpt1/v/t1.0-1/p50x50/10304772_745680325469674_8174104548390667111_n.png?oh=d54d4a66ff8e702fe410546f1a645409&oe=566585EC"],img[src*="//scontent-dfw1-1.xx.fbcdn.net/hprofile-xpt1/v/t1.0-1/p160x160/10304772_745680325469674_8174104548390667111_n.png?oh=5d82b04760b82e729a07fd4db5a98b01&oe=5673AA7D"],img[src*="//yt3.ggpht.com/-jrv_pSTHl4U/AAAAAAAAAAI/AAAAAAAAAAA/A0fo-r2GDXw/s88-c-k-no/photo.jpg"],img[src*="/i/teamlogos/ncaa/500/52.png"],img[src*="/i/teamlogos/ncaa/500-dark/52.png"],img[src="http://image.cdnllnwnl.xosnetwork.com/fls/32900/site_graphics/logo.png"], img[src="http://image.cdnllnwnl.xosnetwork.com/fls/32900/site_graphics/footerlogo.png"],img[src="https://s.yimg.com/xe/ipt/florida_state_seminoles-2014.png"],img[src="http://sports.cbsimg.net/images/collegefootball/logos/100x100/FSU.png"],img[src="http://sports.cbsimg.net/images/collegefootball/logos/70x70/FSU.png"],img[src="http://sports.cbsimg.net/images/collegefootball/logos/50x50/FSU.png"],img[src="https://pbs.twimg.com/profile_images/574646261216714753/XhVVhy-F_400x400.png"],img[src="https://pbs.twimg.com/profile_images/574646261216714753/XhVVhy-F_400x400.png"],img[src="https://pbs.twimg.com/profile_images/574646261216714753/XhVVhy-F_400x400.png"],img[src="//lh3.googleusercontent.com/-jrv_pSTHl4U/AAAAAAAAAAI/AAAAAAAABK4/2oxGXpTDDnQ/s120-c/photo.jpg"],img[src*="https://pbs.twimg.com/profile_images/733080065110618112/GNaj98SD_400x400.jpg"],img[src*="https://pbs.twimg.com/profile_images/770230699337064448/jj2SxENT_bigger.jpg"],img[src*="https://pbs.twimg.com/profile_images/770230699337064448/jj2SxENT_400x400.jpg"],img[src*="yt3.ggpht.com/-jrv_pSTHl4U/AAAAAAAAAAI/AAAAAAAAAAA/A0fo-r2GDXw/s100-c-k-no/photo.jpg"]'), function (i, item) {
                 //Skip if image is already replaced
                 if ($.inArray($(item).attr('src'), lstImgs) == -1) {
                     var h = $(item).height();
@@ -80,4 +80,7 @@ return new Za.prototype.init(a,b,c,d,e)}m.Tween=Za,Za.prototype={constructor:Za,
     //Set global variable
     $.nCage = self;
 
+
+
 })(jQuery);
+
